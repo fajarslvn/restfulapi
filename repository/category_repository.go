@@ -14,3 +14,22 @@ type CategoryRepository interface {
 	FindById(ctx context.Context, tx *sql.Tx, categoryId int) (domain.Category, error)
 	FindByAll(ctx context.Context, tx *sql.Tx) []domain.Category
 }
+
+/* Interface in Go should be like this!
+type Saver interface {
+	Save(ctx context.Context, tx *sql.Tx, category domain.Category) domain.Category
+}
+
+type Updater interface {
+	Update(ctx context.Context, tx *sql.Tx, category domain.Category) domain.Category
+}
+
+type Deleter interface {
+	Delete(ctx context.Context, tx *sql.Tx, category domain.Category)
+}
+
+type Finder interface {
+	FindById(ctx context.Context, tx *sql.Tx, categoryId int) (domain.Category, error)
+	FindByAll(ctx context.Context, tx *sql.Tx) []domain.Category
+}
+*/
